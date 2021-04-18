@@ -1,0 +1,12 @@
+.profile__zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .profile__zone {
+      flex-direction: row;
+      justify-content: flex-start;
+  }
+}
