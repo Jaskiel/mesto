@@ -1,9 +1,27 @@
 .elements {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  grid-template-rows: repeat(6, 361px);
+  grid-template-columns: 282px;
   row-gap: 20px;
   column-gap: 17px;
-  width: 88.1%;
+  width: 282px;
   margin: 0 auto 0;
   max-width: 880px;
+}
+
+
+@media (min-width: 660px) {
+  .elements {
+    width: calc(282px + 282px + 17px);
+    grid-template-rows: repeat(3, 361px);
+    grid-template-columns: repeat(2, 282px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .elements {
+    width: calc(282px + 282px + 282px + 17px + 17px);
+    grid-template-rows: repeat(2, 361px);
+    grid-template-columns: repeat(3, 282px);
+  }
 }
