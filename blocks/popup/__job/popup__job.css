@@ -1,0 +1,15 @@
+.popup__job {
+  margin: 0 22px 45px;
+  border: none;
+  width: 238px;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  padding-bottom: 13px;
+}
+
+
+@media (min-width: 768px) {
+  .popup__job {
+    margin: 0 36px 48px;
+    width: 358px;
+  }
+}

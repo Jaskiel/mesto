@@ -1,5 +1,14 @@
 .popup__container {
-  position: fixed;
-  left: 50%;
-  top: 50%;
+  margin: auto;
+  width: 282px;
+  border-radius: 10px;
+  background-color: #FFF;
+  color: black;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .popup__container {
+    width: 430px;
+  }
 }
