@@ -5,6 +5,7 @@
   background-color: #FFF;
   color: black;
   text-align: center;
+  position: relative;
 }
 
 @media (min-width: 768px) {

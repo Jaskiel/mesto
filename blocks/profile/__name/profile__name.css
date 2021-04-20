@@ -5,6 +5,9 @@
   line-height: 33px;
   margin-top: 0;
   margin-bottom: 14px;
+  max-width: 189px;
+  white-space: normal;
+  text-align: center;
 }
 
 
@@ -12,6 +15,8 @@
   .profile__name {
   font-size: 34px;
   line-height: 40px;
+  max-width: 230px;
+  text-align: left;
   }
 }
 
@@ -20,5 +25,6 @@
   .profile__name {
   font-size: 42px;
   line-height: 48px;
+  max-width: 294px;
   }
 }
