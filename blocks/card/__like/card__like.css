@@ -2,4 +2,12 @@
   width: 22px;
   height: 19px;
   margin-right: 20px;
+  transition: opacity 0.6s ease-in-out;
+  fill: #fff;
+  stroke: #000;
+}
+
+.card__like:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
