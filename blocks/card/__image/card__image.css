@@ -1,4 +1,8 @@
 .card__image {
-  width: 282px;
-  height: 282px;
+ width: 100%;
+ transition: transform 1s ease-in-out;
+}
+
+.card__image:hover {
+  transform: scale(1.05);
 }

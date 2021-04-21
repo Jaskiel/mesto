@@ -30,6 +30,8 @@
 
 @import url(../blocks/card/card.css);
 
+@import url(../blocks/card/__image-wrapper/card__image-wrapper.css);
+
 @import url(../blocks/card/__image/card__image.css);
 
 @import url(../blocks/card/__info-zone/card__info-zone.css);
