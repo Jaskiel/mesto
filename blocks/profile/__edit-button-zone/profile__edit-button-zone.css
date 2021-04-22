@@ -1,0 +1,17 @@
+.profile__edit-button-zone {
+  display: flex;
+  align-items: center;
+}
+
+
+@media (min-width: 768px) {
+  .profile__edit-button-zone {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile__edit-button-zone {
+    align-items: center;
+  }
+}
