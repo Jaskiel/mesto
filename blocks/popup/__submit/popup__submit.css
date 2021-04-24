@@ -1,5 +1,5 @@
 .popup__submit {
-  margin: 0 22px 25px;
+  margin: 15px 22px 25px;
   background-color: black;
   color: #FFF;
   font-size: 14px;
@@ -16,7 +16,7 @@
 
 @media (min-width: 768px) {
   .popup__submit {
-    margin: 0 36px 38px;
+    margin: 20px 36px 38px;
     width: 358px;
     height: 50px;
     font-size: 18px;
@@ -28,6 +28,5 @@
 .popup__submit:hover {
   cursor: pointer;
   opacity: 0.8;
-  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
-  /* В макете у кнопки при наведении определенно есть тень */
+  /* Видимо у себя в копии в Фигме случайно тень добавил:) */
 }
