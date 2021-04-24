@@ -12,6 +12,7 @@
   transform: rotate(45deg);
   padding: 0;
   border: none;
+  outline: none;
 }
 
 @media (min-width: 1024px) {
