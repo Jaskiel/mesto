@@ -1,12 +1,14 @@
 .profile__edit-button-zone {
   display: flex;
   align-items: center;
+  padding-left: 26px;
 }
 
 
 @media (min-width: 768px) {
   .profile__edit-button-zone {
     align-items: flex-start;
+    padding-left: 0;
   }
 }
 

@@ -1,26 +1,30 @@
 .profile__add-button {
   background-color: black;
+  background-image: url(../../../images/cross.svg);
+  background-position: center;
+  background-size: 6%;
+  background-repeat: no-repeat;
   border: #FFF 2px solid;
-  width: 16px;
-  height: 16px;
-  padding: 17px 132px 17px 134px;
+  border-radius: 2px;
+  width: 282px;
+  height: 50px;
   font-size: 32px;
   transition: opacity 0.7s ease-in-out;
+  padding: 0;
 }
 
 @media (min-width: 768px) {
   .profile__add-button {
-    width: 19px;
-    height: 19px;
-    padding: 12px 56px 12px;
+    background-size: 15%;
+    width: 20%;
   }
 }
 
 @media (min-width: 1024px) {
   .profile__add-button {
-    width: 22px;
-    height: 22px;
-    padding: 14px 64px 14px;
+    width: 150px;
+    background-size: 15%;
+    margin-bottom: 32px;
   }
 }
 

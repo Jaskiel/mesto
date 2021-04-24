@@ -21,84 +21,88 @@
             <div class="profile__info">
               <div class="profile__edit-button-zone">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
-                <img src="images/edit-button.svg" alt="Кнопка редактирования" class="profile__edit-button">
+                <button type="button" class="profile__edit-button"></button>
               </div>
               <p class="profile__description">Исследователь океана</p>
             </div>
         </div>
-          <img src="images/cross.svg" alt="Кнопка добавления" class="profile__add-button">
+          <button type="button" class="profile__add-button"></button>
       </section>
 
     <section class="elements">
-      <div class="card">
+      <article class="card">
         <div class="card__image-wrapper">
           <img src="images/Zuratkul.jpg" alt="Зюраткуль" class="card__image">
         </div>
         <div class="card__info-zone">
           <h2 class="card__title">Зюраткуль</h2>
-          <div class="card__like"></div>
+          <button type="button" name="button" class="card__like"></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <div class="card__image-wrapper">
           <img src="images/Duderghof.jpg" alt="Дудергоф" class="card__image">
         </div>
         <div class="card__info-zone">
           <h2 class="card__title">Дудергоф</h2>
-          <div class="card__like"></div>
+          <button type="button" name="button" class="card__like"></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <div class="card__image-wrapper">
           <img src="images/Sortavala.jpg" alt="Сортавала" class="card__image">
         </div>
         <div class="card__info-zone">
           <h2 class="card__title">Сортавала</h2>
-          <div class="card__like"></div>
+          <button type="button" name="button" class="card__like"></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <div class="card__image-wrapper">
           <img src="images/Ruskeala.jpg" alt="Рускеала" class="card__image">
         </div>
         <div class="card__info-zone">
           <h2 class="card__title">Рускеала</h2>
-          <div class="card__like"></div>
+          <button type="button" name="button" class="card__like"></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <div class="card__image-wrapper">
           <img src="images/Staraya-Ladoga.jpg" alt="Старая Ладога" class="card__image">
         </div>
         <div class="card__info-zone">
           <h2 class="card__title">Старая Ладога</h2>
-          <div class="card__like"></div>
+          <button type="button" name="button" class="card__like"></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <div class="card__image-wrapper">
             <img src="images/Kasli.jpg" alt="Касли" class="card__image">
         </div>
         <div class="card__info-zone">
           <h2 class="card__title">Касли</h2>
-          <div class="card__like"></div>
+          <button type="button" name="button" class="card__like"></button>
         </div>
-      </div>
+      </article>
     </section>
     </main>
 
     <footer class="footer">
       <p class="footer__text">&copy; 2021 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <div class="popup">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input type="text" name="nameInput" value="" class="popup__name">
-        <input type="text" name="jobInput" value="" class="popup__job">
-        <input type="submit" value="Сохранить" class="popup__submit">
-        <img src="images/close.svg" alt="Значок закрытия окна" class="popup__close">
+        <form class="" action="index.html" method="post">
+          <fieldset class="popup__input-container">
+            <input type="text" name="nameInput" value="" class="popup__input-item popup__input-item_el_name">
+            <input type="text" name="jobInput" value="" class="popup__input-item popup__input-item_el_job">
+          </fieldset>
+        </form>
+        <button type="button" class="popup__submit">Сохранить</button>
+        <button type="button" name="button" class="popup__close"></button>
       </div>
-    </section>
+    </div>
     <script src="scripts/scripts.js"></script>
 </body>
 </html>
