@@ -7,11 +7,9 @@ let popup =  document.querySelector(".popup");
 
 let cross = document.querySelector(".popup__close");
 
-let nameInput = popup.querySelector(".popup__input-item_el_name");
+let nameInput = popup.querySelector(".form__input-item_el_name");
 
-let jobInput = popup.querySelector(".popup__input-item_el_job");
-
-let formElement =  document.querySelector(".popup__submit");
+let jobInput = popup.querySelector(".form__input-item_el_job");
 
 let profileName = document.querySelector(".profile__name");
 

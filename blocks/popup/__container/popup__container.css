@@ -6,12 +6,13 @@
   color: black;
   text-align: center;
   position: relative;
-  min-height: 322px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media (min-width: 768px) {
   .popup__container {
     width: 430px;
-    min-height: 330px;
   }
 }
