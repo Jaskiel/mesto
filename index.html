@@ -30,67 +30,17 @@
       </section>
 
     <section class="elements">
-      <article class="card">
-        <div class="card__image-wrapper">
-          <img src="images/Zuratkul.jpg" alt="Зюраткуль" class="card__image">
-        </div>
-        <div class="card__info-zone">
-          <h2 class="card__title">Зюраткуль</h2>
-          <button type="button" aria-label="Like" class="card__like"></button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card__image-wrapper">
-          <img src="images/Duderghof.jpg" alt="Дудергоф" class="card__image">
-        </div>
-        <div class="card__info-zone">
-          <h2 class="card__title">Дудергоф</h2>
-          <button type="button" aria-label="Like" class="card__like"></button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card__image-wrapper">
-          <img src="images/Sortavala.jpg" alt="Сортавала" class="card__image">
-        </div>
-        <div class="card__info-zone">
-          <h2 class="card__title">Сортавала</h2>
-          <button type="button" aria-label="Like" class="card__like"></button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card__image-wrapper">
-          <img src="images/Ruskeala.jpg" alt="Рускеала" class="card__image">
-        </div>
-        <div class="card__info-zone">
-          <h2 class="card__title">Рускеала</h2>
-          <button type="button" aria-label="Like" class="card__like"></button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card__image-wrapper">
-          <img src="images/Staraya-Ladoga.jpg" alt="Старая Ладога" class="card__image">
-        </div>
-        <div class="card__info-zone">
-          <h2 class="card__title">Старая Ладога</h2>
-          <button type="button" aria-label="Like" class="card__like"></button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card__image-wrapper">
-            <img src="images/Kasli.jpg" alt="Касли" class="card__image">
-        </div>
-        <div class="card__info-zone">
-          <h2 class="card__title">Касли</h2>
-          <button type="button" aria-label="Like" class="card__like"></button>
-        </div>
-      </article>
+      <ul class="elements__card-zone">
+
+      </ul>
     </section>
     </main>
 
     <footer class="footer">
       <p class="footer__text">&copy; 2021 Mesto Russia</p>
     </footer>
-    <div class="popup">
+
+    <div class="popup popup_type_edit">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="form" name="UserBio" action="index.html" method="post">
@@ -103,6 +53,35 @@
         <button type="button" name="button" class="popup__close"></button>
       </div>
     </div>
+
+    <div class="popup popup_type_new-card">
+      <div class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+        <form class="form" name="CardAdd" action="index.html" method="post">
+          <fieldset class="form__input-container">
+            <input type="text" name="card-nameInput" value="" placeholder="Название" class="form__input-item form__input-item_el_card-name">
+            <input type="text" name="card-linkInput" value="" placeholder="Ссылка на картинку" class="form__input-item form__input-item_el_card-link">
+            <button type="submit" class="form__submit">Создать</button>
+          </fieldset>
+        </form>
+        <button type="button" name="button" class="popup__close"></button>
+      </div>
+    </div>
+
+    <template id="img-card">
+      <li class="elements__list-item">
+        <article class="card">
+              <div class="card__image-wrapper">
+                <img src="#" alt="" class="card__image">
+              </div>
+              <div class="card__info-zone">
+                <h2 class="card__title"></h2>
+                <button type="button" aria-label="Like" class="card__like"></button>
+              </div>
+              <button type="button" name="button" class="card__trash"></button>
+        </article>
+      </li>
+    </template>
     <script src="scripts/scripts.js"></script>
 </body>
 </html>
