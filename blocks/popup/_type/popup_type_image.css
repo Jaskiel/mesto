@@ -1,3 +1,4 @@
-.popup_type_image [
-
-]
+.popup_type_image {
+  justify-content: center;
+  align-items: center;
+}

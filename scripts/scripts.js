@@ -59,6 +59,14 @@ const elementsList = elements.querySelector('.elements__card-zone');
 
 const imgTemplate = document.querySelector('#img-card').content;
 
+const popupTypeImage = document.querySelector('.popup_type_image');
+
+const popupImage = popupTypeImage.querySelector('.popup__image');
+
+const popupCaption = popupTypeImage.querySelector('.popup__caption');
+
+const closePopupTypeImage = popupTypeImage.querySelector('.popup__close');
+
 function togglePopup(popup) {
   popup.classList.toggle('popup_opened');
 }
@@ -151,6 +159,12 @@ function newCardAdding(evt) {
     evt.target.closest('.elements__list-item').remove();
   });
 
+  cardImage.addEventListener('click', function(){
+    popupImage.src = cardImage.src;
+    popupCaption.textContent = cardTitle.textContent;
+    togglePopup(popupTypeImage);
+  });
+
   cardImage.src = cardLinkInput.value;
 
   cardTitle.textContent = cardNameInput.value;
@@ -178,3 +192,26 @@ formNewCard.addEventListener('submit', newCardAdding);
       listItem.remove();
   });
   });
+
+
+
+//opening popup-image functionality
+
+const cardImages = elements.querySelectorAll('.card__image');
+cardImages.forEach(function (image) {
+  image.addEventListener('click', function(evt){
+    const cardImage = evt.target;
+    const cardTitle = evt.target.parentElement.nextElementSibling.firstElementChild;
+    popupImage.src = cardImage.src;
+    popupCaption.textContent = cardTitle.textContent;
+    togglePopup(popupTypeImage);
+  });
+});
+
+
+
+//closing popup-image functionality
+
+closePopupTypeImage.addEventListener('click', function(){
+    togglePopup(popupTypeImage);
+});
