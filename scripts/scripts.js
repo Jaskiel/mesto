@@ -25,35 +25,35 @@ const initialCards = [
   }
 ];
 
-let profileEditButton = document.querySelector(".profile__edit-button");
+const profileEditButton = document.querySelector(".profile__edit-button");
 
-let popupEdit =  document.querySelector(".popup_type_edit");
+const popupEdit =  document.querySelector(".popup_type_edit");
 
-let popupNewCard =  document.querySelector(".popup_type_new-card");
+const popupNewCard =  document.querySelector(".popup_type_new-card");
 
-let addButton = document.querySelector(".profile__add-button");
+const addButton = document.querySelector(".profile__add-button");
 
-let cross = popupEdit.querySelector(".popup__close");
+const cross = popupEdit.querySelector(".popup__close");
 
-let crossNewCard = popupNewCard.querySelector(".popup__close");
+const crossNewCard = popupNewCard.querySelector(".popup__close");
 
-let nameInput = popupEdit.querySelector(".form__input-item_el_name");
+const nameInput = popupEdit.querySelector(".form__input-item_el_name");
 
-let jobInput = popupEdit.querySelector(".form__input-item_el_job");
+const jobInput = popupEdit.querySelector(".form__input-item_el_job");
 
-let cardNameInput = popupNewCard.querySelector(".form__input-item_el_card-name");
+const cardNameInput = popupNewCard.querySelector(".form__input-item_el_card-name");
 
-let cardLinkInput = popupNewCard.querySelector(".form__input-item_el_card-link");
+const cardLinkInput = popupNewCard.querySelector(".form__input-item_el_card-link");
 
-let profileName = document.querySelector(".profile__name");
+const profileName = document.querySelector(".profile__name");
 
-let profileJob = document.querySelector(".profile__description");
+const profileJob = document.querySelector(".profile__description");
 
-let formEdit = popupEdit.querySelector(".form");
+const formEdit = popupEdit.querySelector(".form");
 
-let formNewCard = popupNewCard.querySelector(".form");
+const formNewCard = popupNewCard.querySelector(".form");
 
-let elements = document.querySelector(".elements");
+const elements = document.querySelector(".elements");
 
 const elementsList = elements.querySelector('.elements__card-zone');
 
@@ -137,7 +137,7 @@ crossNewCard.addEventListener('click', function() {
 
 //adding of new-card functionality
 
-function newCardAdding(evt) {
+function addnewCard(evt) {
 
   evt.preventDefault();
 
@@ -178,7 +178,7 @@ function newCardAdding(evt) {
   togglePopup(popupNewCard);
 };
 
-formNewCard.addEventListener('submit', newCardAdding);
+formNewCard.addEventListener('submit', addnewCard);
 
 
 
