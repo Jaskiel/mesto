@@ -45,8 +45,8 @@
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="form" name="UserBio" action="index.html" method="post">
           <fieldset class="form__input-container">
-            <input type="text" name="nameInput" value="" class="form__input-item form__input-item_el_name">
-            <input type="text" name="jobInput" value="" class="form__input-item form__input-item_el_job">
+            <input type="text" required name="nameInput" value="" class="form__input-item form__input-item_el_name">
+            <input type="text" required name="jobInput" value="" class="form__input-item form__input-item_el_job">
             <button type="submit" class="form__submit">Сохранить</button>
           </fieldset>
         </form>
@@ -59,8 +59,8 @@
         <h2 class="popup__title">Новое место</h2>
         <form class="form" name="CardAdd" action="index.html" method="post">
           <fieldset class="form__input-container">
-            <input type="text" name="card-nameInput" value="" placeholder="Название" class="form__input-item form__input-item_el_card-name">
-            <input type="text" name="card-linkInput" value="" placeholder="Ссылка на картинку" class="form__input-item form__input-item_el_card-link">
+            <input type="text" required name="card-nameInput" value="" placeholder="Название" class="form__input-item form__input-item_el_card-name">
+            <input type="text" required name="card-linkInput" value="" placeholder="Ссылка на картинку" class="form__input-item form__input-item_el_card-link">
             <button type="submit" class="form__submit">Создать</button>
           </fieldset>
         </form>
