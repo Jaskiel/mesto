@@ -91,10 +91,9 @@ cross.addEventListener('click', function() {
 });
 
 
-//creating initial image-cards
+//createCard function
 
-function createInitialCard(item) {
-
+function createCard(sourceName, sourceLink) {
   const imgCard = imgTemplate.querySelector('.elements__list-item').cloneNode(true);
 
   const cardImage = imgCard.querySelector('.card__image');
@@ -105,39 +104,40 @@ function createInitialCard(item) {
 
   const deleteButton = imgCard.querySelector('.card__trash');
 
-  cardImage.src = item.link;
+likeButton.addEventListener('click', function(evt) {
+  evt.target.classList.toggle('card__like_active');
+});
 
-  cardImage.alt = item.name;
+deleteButton.addEventListener('click', function(evt) {
+  evt.target.closest('.elements__list-item').remove();
+});
 
-  cardTitle.textContent = item.name;
+cardImage.addEventListener('click', function(){
+  popupImage.src = cardImage.src;
+  popupCaption.textContent = cardTitle.textContent;
+  togglePopup(popupTypeImage);
+});
 
-  likeButton.addEventListener('click', function(evt) {
-      evt.target.classList.toggle('card__like_active');
-    });
+cardImage.src = sourceLink;
 
+cardImage.alt = sourceName;
 
-    deleteButton.addEventListener('click', function(evt){
-        const listItem = evt.target.closest('.elements__list-item');
-        listItem.remove();
-    });
+cardTitle.textContent = sourceName;
 
+return imgCard;
 
-   cardImage.addEventListener('click', function(evt) {
-        popupImage.src = cardImage.src;
-        popupCaption.textContent = cardTitle.textContent;
-        togglePopup(popupTypeImage);
-      });
-
-  return imgCard;
 };
-
 
 
 //adding initial image-cards
 
-initialCards.forEach(function (item) {
+initialCards.forEach( function(currentItem)  {
 
-  const imgCard = createInitialCard(item);
+  const cardName = currentItem.name;
+
+  const cardLink = currentItem.link;
+
+  const imgCard = createCard(cardName, cardLink);
 
   elementsList.append(imgCard);
 
@@ -145,11 +145,10 @@ initialCards.forEach(function (item) {
 
 
 
-
-
 //popup_type_new-card Toggle
 
 addButton.addEventListener('click', function () {
+  
   cardLinkInput.value = "";
 
   cardNameInput.value = "";
@@ -163,54 +162,17 @@ crossNewCard.addEventListener('click', function() {
 
 
 
-//creating new card functionality
-
-function createCard() {
-
-  const imgCard = imgTemplate.querySelector('.elements__list-item').cloneNode(true);
-
-  const cardImage = imgCard.querySelector('.card__image');
-
-  const cardTitle = imgCard.querySelector('.card__title');
-
-  const likeButton = imgCard.querySelector('.card__like');
-
-  const deleteButton = imgCard.querySelector('.card__trash');
-
-  likeButton.addEventListener('click', function(evt) {
-    evt.target.classList.toggle('card__like_active');
-  });
-
-  deleteButton.addEventListener('click', function(evt) {
-    evt.target.closest('.elements__list-item').remove();
-  });
-
-  cardImage.addEventListener('click', function(){
-    popupImage.src = cardImage.src;
-    popupCaption.textContent = cardTitle.textContent;
-    togglePopup(popupTypeImage);
-  });
-
-  cardImage.src = cardLinkInput.value;
-
-  cardImage.alt = cardNameInput.value;
-
-  cardTitle.textContent = cardNameInput.value;
-
-  cardLinkInput.value = "";
-
-  cardNameInput.value = "";
-
-  return imgCard;
-};
-
 //adding of new-card functionality
 
 function addnewCard(evt) {
 
   evt.preventDefault();
 
-  const imgCard = createCard();
+  const cardName = cardNameInput.value;
+
+  const cardLink = cardLinkInput.value;
+
+  const imgCard = createCard(cardName, cardLink);
 
   elementsList.prepend(imgCard);
 
