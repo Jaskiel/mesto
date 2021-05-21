@@ -71,6 +71,39 @@ const popupCaption = popupTypeImage.querySelector('.popup__caption');
 
 const closePopupTypeImage = popupTypeImage.querySelector('.popup__close');
 
+
+//close Popup by click on overlay function
+
+function closeByOverlay(popup) {
+  popup.addEventListener('click', function(evt) {
+  if (evt.target === evt.currentTarget) {
+    togglePopup(popup);
+}
+});
+};
+
+closeByOverlay(popupEdit);
+closeByOverlay(popupNewCard);
+
+
+//close Popup by click on ESC button function
+
+function closeByEscape(popup) {
+  window.addEventListener('keydown', function(evt) {
+  if (evt.key === 'Escape'&&popup.classList.contains('popup_opened')) {
+    togglePopup(popup);
+}
+});
+};
+
+
+closeByEscape(popupEdit);
+closeByEscape(popupNewCard);
+
+
+
+//popup toggle functionality
+
 function togglePopup(popup) {
   popup.classList.toggle('popup_opened');
 }
