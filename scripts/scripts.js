@@ -33,17 +33,21 @@ const popupNewCard =  document.querySelector(".popup_type_new-card");
 
 const addButton = document.querySelector(".profile__add-button");
 
+const editPopupSubmitButton = popupEdit.querySelector(".form__submit");
+
+const newCardSubmitButton = popupNewCard.querySelector(".form__submit");
+
 const cross = popupEdit.querySelector(".popup__close");
 
 const crossNewCard = popupNewCard.querySelector(".popup__close");
 
-const nameInput = popupEdit.querySelector(".form__input-item_el_name");
+const nameInput = popupEdit.querySelector(".form__input_el_name");
 
-const jobInput = popupEdit.querySelector(".form__input-item_el_job");
+const jobInput = popupEdit.querySelector(".form__input_el_job");
 
-const cardNameInput = popupNewCard.querySelector(".form__input-item_el_card-name");
+const cardNameInput = popupNewCard.querySelector(".form__input_el_card-name");
 
-const cardLinkInput = popupNewCard.querySelector(".form__input-item_el_card-link");
+const cardLinkInput = popupNewCard.querySelector(".form__input_el_card-link");
 
 const profileName = document.querySelector(".profile__name");
 
@@ -81,9 +85,15 @@ function formSubmitHandler (evt) {
 formEdit.addEventListener('submit', formSubmitHandler);
 
 profileEditButton.addEventListener('click', function () {
+  const editPopupInputList = Array.from(formEdit.querySelectorAll('.form__input'));
+  editPopupInputList.forEach((inputItem) => {
+    hideInputError(formEdit, inputItem);
+  });
+
   togglePopup(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
+  toggleButtonState(editPopupSubmitButton, editPopupInputList);
 });
 
 cross.addEventListener('click', function() {
@@ -148,10 +158,18 @@ initialCards.forEach( function(currentItem)  {
 //popup_type_new-card Toggle
 
 addButton.addEventListener('click', function () {
-  
+
   cardLinkInput.value = "";
 
   cardNameInput.value = "";
+
+  const newCardPopupInputList = Array.from(formNewCard.querySelectorAll('.form__input'));
+
+  newCardPopupInputList.forEach((inputItem) => {
+    hideInputError(formNewCard, inputItem);
+  });
+
+  toggleButtonState(newCardSubmitButton, newCardPopupInputList);
 
   togglePopup(popupNewCard);
 });
