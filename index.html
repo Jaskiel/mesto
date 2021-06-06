@@ -43,7 +43,7 @@
     <div class="popup popup_type_edit">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="form" name="UserBio" action="index.html" method="post" novalidate>
+        <form class="form form__popup_type_edit" name="UserBio" action="index.html" method="post" novalidate>
           <fieldset class="form__input-container">
             <input id="name-input" type="text" required name="nameInput" value="" class="form__input form__input_el_name" minlength="2" maxlength="40">
             <span class="name-input-error form__input-error"></span>
@@ -59,7 +59,7 @@
     <div class="popup popup_type_new-card">
       <div class="popup__container">
         <h2 class="popup__title">Новое место</h2>
-        <form class="form" name="CardAdd" action="index.html" method="post" novalidate>
+        <form class="form form__popup_type_new-card" name="CardAdd" action="index.html" method="post" novalidate>
           <fieldset class="form__input-container">
             <input id="cardName-input" type="text" required name="card-nameInput" value="" placeholder="Название" class="form__input form__input_el_card-name" minlength="2" maxlength="30">
             <span class="cardName-input-error form__input-error"></span>
@@ -94,7 +94,8 @@
         </article>
       </li>
     </template>
-    <script src="scripts/validate.js"></script>
-    <script src="scripts/scripts.js"></script>
+    <script  type="module" src="scripts/card.js"></script>
+    <script  type="module" src="scripts/formValidator.js"></script>
+    <script  type="module" src="scripts/index.js"></script>
 </body>
 </html>
