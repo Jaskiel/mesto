@@ -85,9 +85,9 @@ const closePopupTypeImage = popupTypeImage.querySelector('.popup__close');
 
 const editPopupInputList = Array.from(formEdit.querySelectorAll('.form__input'));
 
-const formEditElement = '.form__popup_type_edit';
+const formEditElement = '.form_type_edit';
 
-const formAddElement = '.form__popup_type_new-card';
+const formAddElement = '.form_type_new-card';
 
 //close Popup by click on overlay function
 
