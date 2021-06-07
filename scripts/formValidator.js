@@ -1,6 +1,4 @@
-import { openPopup, closePopup, closeByEscape } from './utils/utils.js';
-
- export class FormValidator {
+export class FormValidator {
 	constructor(config, currentFormSelector) {
 		this._form = document.querySelector(currentFormSelector);
     this._inputList = Array.from(this._form.querySelectorAll(config.inputSelector));

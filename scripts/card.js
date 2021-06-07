@@ -4,7 +4,7 @@ const popupImage = popupTypeImage.querySelector('.popup__image');
 
 const popupCaption = popupTypeImage.querySelector('.popup__caption');
 
-import { openPopup, closePopup, closeByEscape } from './utils/utils.js';
+import { openPopup } from './utils/utils.js';
 
  class Card {
 	constructor(data, cardSelector) {
