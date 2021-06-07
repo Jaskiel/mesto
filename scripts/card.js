@@ -4,30 +4,7 @@ const popupImage = popupTypeImage.querySelector('.popup__image');
 
 const popupCaption = popupTypeImage.querySelector('.popup__caption');
 
-//popup opening functionality
-
-function openPopup(popup) {
-  popup.classList.add('popup_opened');
-  window.addEventListener('keydown', closeByEscape);
-}
-
-//popup closing functionality
-
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-  window.removeEventListener('keydown', closeByEscape);
-}
-
-//close Popup by click on ESC button function
-
-function closeByEscape(evt) {
-  if(evt.key === 'Escape') {
-    const openedPopup = document.querySelector('.popup_opened');
-    closePopup(openedPopup);
-  }
-}
-
-
+import { openPopup, closePopup, closeByEscape } from './utils/utils.js';
 
  class Card {
 	constructor(data, cardSelector) {
@@ -48,32 +25,33 @@ function closeByEscape(evt) {
 
   generateCard() {
   this._element = this._getTemplate();
-
-  this._element.querySelector('.card__image').src = this._image;
-  this._element.querySelector('.card__title').textContent = this._text;
+  this._cardImage = this._element.querySelector('.card__image');
+  this._cardTitle = this._element.querySelector('.card__title');
+  this._cardLike = this._element.querySelector('.card__like');
+  this._cardImage.src = this._image;
+  this._cardImage.alt = this._text;
+  this._cardTitle.textContent = this._text;
   this._setEventListeners();
   return this._element;
   }
 
-
-
   _openPopupTypeImage() {
-    popupImage.src = this._element.querySelector('.card__image').src;
-    popupCaption.textContent = this._element.querySelector('.card__title').textContent;
+    popupImage.src = this._cardImage.src;
+    popupImage.alt = this._cardTitle.textContent;
+    popupCaption.textContent = this._cardTitle.textContent;
     openPopup(popupTypeImage);
   }
 
   _toggleLike() {
-    this._element.querySelector('.card__like').classList.toggle('card__like_active');
+    this._cardLike.classList.toggle('card__like_active');
   }
 
   _removeListItem() {
     this._element.remove();
   }
 
-
   _setEventListeners() {
-  this._element.querySelector('.card__like').addEventListener('click', () => {
+  this._cardLike.addEventListener('click', () => {
     this._toggleLike();
   });
 
@@ -81,11 +59,11 @@ function closeByEscape(evt) {
     this._removeListItem();
   });
 
-  this._element.querySelector('.card__image').addEventListener('click', () => {
+  this._cardImage.addEventListener('click', () => {
     this._openPopupTypeImage();
   });
 
 }
 }
 
-export {openPopup, closePopup, closeByEscape, Card};
+export { Card };

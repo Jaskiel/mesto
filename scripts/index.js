@@ -1,32 +1,7 @@
-import {openPopup, closePopup, closeByEscape, Card} from './card.js';
-import {FormValidator} from './formValidator.js';
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+import { Card } from './card.js';
+import { FormValidator } from './formValidator.js';
+import { initialCards } from './initial-сards.js';
+import { openPopup, closePopup, closeByEscape } from './utils/utils.js';
 
 const config = {
   formSelector: '.form',
@@ -89,7 +64,12 @@ const formEditElement = '.form_type_edit';
 
 const formAddElement = '.form_type_new-card';
 
-//close Popup by click on overlay function
+const cardTemplateSelector = '#img-card';
+
+function createCard(data, cardSelector) {
+  const card = new Card(data, cardSelector);
+  return card;
+}
 
 function closeByOverlay(popup) {
   popup.addEventListener('click', function(evt) {
@@ -103,40 +83,27 @@ closeByOverlay(popupEdit);
 closeByOverlay(popupNewCard);
 closeByOverlay(popupTypeImage);
 
-
-
-
-closeByEscape(popupEdit);
-closeByEscape(popupNewCard);
-closeByEscape(popupTypeImage);
-
-
-
-function formSubmitHandler (evt) {
+function formEditProfileSubmitHandler (evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
     closePopup(popupEdit);
 }
 
-formEdit.addEventListener('submit', formSubmitHandler);
+formEdit.addEventListener('submit', formEditProfileSubmitHandler);
 
 profileEditButton.addEventListener('click', function () {
-  formEditValidator.removeInputError();
+  formEditProfleValidator.removeInputError();
 
   openPopup(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-  formEditValidator.toggleButtonState();
+  formEditProfleValidator.toggleButtonState();
 });
 
 cross.addEventListener('click', function() {
   closePopup(popupEdit);
 });
-
-
-
-//popup_type_new-card Toggle
 
 addButton.addEventListener('click', function () {
 
@@ -144,9 +111,9 @@ addButton.addEventListener('click', function () {
 
   cardNameInput.value = "";
 
-  formAddValidator.removeInputError();
+  formAddCardValidator.removeInputError();
 
-  formAddValidator.toggleButtonState();
+  formAddCardValidator.toggleButtonState();
 
   openPopup(popupNewCard);
 });
@@ -155,10 +122,7 @@ crossNewCard.addEventListener('click', function() {
   closePopup(popupNewCard);
 });
 
-
-//adding of new-card functionality
-
-function addnewCard(evt) {
+function submitAddCardForm(evt) {
 
   evt.preventDefault();
 
@@ -168,7 +132,7 @@ function addnewCard(evt) {
 
   newCardData.link = cardLinkInput.value;
 
-  const imgCard = new Card(newCardData, '#img-card');
+  const imgCard = createCard(newCardData, cardTemplateSelector);
   const cardElement = imgCard.generateCard();
 
   elementsList.prepend(cardElement);
@@ -176,34 +140,20 @@ function addnewCard(evt) {
   closePopup(popupNewCard);
 };
 
-formNewCard.addEventListener('submit', addnewCard);
-
-
-
-//closing popup-image functionality
+formNewCard.addEventListener('submit', submitAddCardForm);
 
 closePopupTypeImage.addEventListener('click', function(){
     closePopup(popupTypeImage);
 });
 
-
-
-
-
-
-
-
-
-
 initialCards.forEach((item) => {
-  const card = new Card(item, '#img-card');
+  const card = createCard(item, cardTemplateSelector);
   const cardElement = card.generateCard();
 
   elementsList.append(cardElement);
 });
 
-
-const formEditValidator = new FormValidator(config, formEditElement);
-formEditValidator.enableValidation();
-const formAddValidator = new FormValidator(config, formAddElement);
-formAddValidator.enableValidation();
+const formEditProfleValidator = new FormValidator(config, formEditElement);
+formEditProfleValidator.enableValidation();
+const formAddCardValidator = new FormValidator(config, formAddElement);
+formAddCardValidator.enableValidation();
